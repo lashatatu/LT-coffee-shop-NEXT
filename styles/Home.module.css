@@ -11,6 +11,12 @@
 	padding-right: 1rem;
 }
 
+.heroImage{
+	position: absolute;
+	top: 0px;
+	z-index: 1;
+}
+
 
 /** Breakpoints:
   sm: min-width: 640px;
