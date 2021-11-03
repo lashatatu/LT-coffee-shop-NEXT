@@ -4,7 +4,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang={"en"}>
-        <Head></Head>
+        <Head>
+          <link rel={'preload'} href={'/fonts'} />
+        </Head>
         <body>
           <Main></Main>
           <NextScript />
