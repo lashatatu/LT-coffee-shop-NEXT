@@ -1,25 +1,46 @@
 .container {
-	margin-bottom: 14rem
+	margin-bottom: 14rem /* 224px */;
 }
 
 .main {
-	margin-top: 2.5rem;
+	margin-top: 2.5rem /* 40px */;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 72rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	max-width: 72rem /* 1152px */;
+	padding-left: 1rem /* 16px */;
+	padding-right: 1rem /* 16px */;
 }
 
-.heroImage{
+.heroImage {
 	position: absolute;
-	top: 2rem;
+	top: 0px;
 	z-index: 1;
 }
 
+.cardLayout {
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	column-gap: 1.5rem;
+	row-gap: 1.5rem;
+}
+
+.card {
+	justify-content: center;
+}
+
+.heading2 {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	padding-bottom: 2rem;
+	margin-top: 2rem;
+	color: var(--text-white-100);
+}
+
+.sectionWrapper {
+	margin-top: 5rem;
+}
 
 /** Breakpoints:
-//ა
   sm: min-width: 640px;
   md: min-width: 768px;
   lg: min-width: 1024px;
