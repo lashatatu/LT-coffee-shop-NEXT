@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../Components/Banner";
 import Card from "../Components/Card";
+import coffeeStores from "../data/coffee-stores.json";
 
 export default function Home() {
   const handleOnBannerBtnClick = () => {
@@ -30,17 +31,15 @@ export default function Home() {
           />
         </div>
         <div className={styles.cardLayout}>
-          <Card
-            name={"darkhorse coffee"}
-            imgUrl={"/static/Coffee-shop-pana.png"}
-            href={"/coffee-store/darkhorse-coffee"}
-            className={styles.card}
-          /><Card
-            name={"darkhorse coffee"}
-            imgUrl={"/static/Coffee-shop-pana.png"}
-            href={"/coffee-store/darkhorse-coffee"}
-            className={styles.card}
-          />
+          {coffeeStores.map((coffeeStore) => (
+            <Card
+              name={coffeeStore.name}
+              imgUrl={coffeeStore.imgUrl}
+              href={"/coffee-store/darkhorse-coffee"}
+              className={styles.card}
+            />
+          ))}
+
         </div>
       </main>
     </div>
