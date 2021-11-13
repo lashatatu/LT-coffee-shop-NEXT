@@ -35,11 +35,10 @@ export default function Home() {
             <Card
               name={coffeeStore.name}
               imgUrl={coffeeStore.imgUrl}
-              href={"/coffee-store/darkhorse-coffee"}
+              href={`/coffee-store/${coffeeStore.id}`}
               className={styles.card}
             />
           ))}
-
         </div>
       </main>
     </div>
