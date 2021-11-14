@@ -6,7 +6,7 @@ export function getStaticProps({ params }) {
   return {
     props: {
       coffeeStore: coffeeStoresData.find(
-        (coffeeStore) => coffeeStore.id === params.id
+        (coffeeStore) => coffeeStore.id.toString() === params.id
       ),
     },
   };
@@ -15,13 +15,13 @@ export function getStaticProps({ params }) {
 export function getStaticPaths() {
   return {
     paths: coffeeStoresData.map((coffeeStore) => ({
-      params: { id: coffeeStore.id },
+      params: { id: coffeeStore.id.toString() },
     })),
     fallback: false,
   };
 }
 
-const CoffeeStore = () => {
+const CoffeeStore = (props) => {
   const router = useRouter();
   return (
     <div>
@@ -29,7 +29,8 @@ const CoffeeStore = () => {
       <Link href="/">
         <a>Back To Home</a>
       </Link>
-      <p>CoffeeStore</p>
+      <p>{props.coffeeStore.address}</p>
+      <p>{props.coffeeStore.name}</p>
     </div>
   );
 };
