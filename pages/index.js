@@ -6,8 +6,13 @@ import Card from "../Components/Card";
 import coffeeStoresData from "../data/coffee-stores.json";
 
 export async function getStaticProps(context) {
+  const fetching = fetch(
+    `https://api.foursquare.com/v2/venues/search?ll=41.705922751666556, 44.78714478305549&query=coffee stores&client_id=${process.env.FOURSQUARE_CLIENT_ID}&client_secret=${process.env.FOURSQUARE_CLIENT_SECRET}&v=20210525`
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data));
   return {
-    props: { coffeeStores:coffeeStoresData },
+    props: { coffeeStores: coffeeStoresData },
   };
 }
 
