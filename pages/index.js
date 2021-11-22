@@ -8,6 +8,7 @@ import { fetchCoffeeStores } from "../lib/coffee-stores";
 export async function getStaticProps(context) {
   const coffeeStores = await fetchCoffeeStores();
 
+
   return {
     props: { coffeeStores },
   };
